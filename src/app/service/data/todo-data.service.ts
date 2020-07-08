@@ -7,10 +7,11 @@ import { Todo } from '../../list-todos/list-todos.component';
   providedIn: 'root'
 })
 export class TodoDataService {
-
+  userName: string = 'pankaj';
   constructor(
     private http:HttpClient
-  ) { }
+  ) { 
+  }
 
   retrieveAllTodos(username) {
     return this.http.get<Todo[]>(`${TODO_JPA_API_URL}/users/${username}/todos`);

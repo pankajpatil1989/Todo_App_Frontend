@@ -11,6 +11,7 @@ export const AUTHENTICATED_USER = 'authenticaterUser'
 })
 export class BasicAuthenticationService {
 
+  authenticatedUserName: string = '';
   constructor(private http: HttpClient) { }
 
   executeJWTAuthenticationService(username, password) {
@@ -24,6 +25,7 @@ export class BasicAuthenticationService {
           data => {
             sessionStorage.setItem(AUTHENTICATED_USER, username);
             sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
+            this.authenticatedUserName = sessionStorage.getItem(AUTHENTICATED_USER)
             return data;
           }
         )

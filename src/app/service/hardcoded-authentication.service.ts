@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+import { BasicAuthenticationService } from './basic-authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HardcodedAuthenticationService {
 
-  constructor() { }
+  constructor(private basicAuthenticationService: BasicAuthenticationService) { }
 
   authenticate(username, password) {
     //console.log('before ' + this.isUserLoggedIn());
-    if(username==="in28minutes" && password === 'dummy') {
+    if(username==="pankaj" && password === 'dummy') {
       sessionStorage.setItem('authenticaterUser', username);
       //console.log('after ' + this.isUserLoggedIn());
       return true;
@@ -23,7 +24,8 @@ export class HardcodedAuthenticationService {
   }
 
   logout(){
-    sessionStorage.removeItem('authenticaterUser')
+    sessionStorage.removeItem('authenticaterUser');
+    this.basicAuthenticationService.authenticatedUserName = '';
   }
 
 }
