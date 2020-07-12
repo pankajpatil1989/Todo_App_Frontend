@@ -1,6 +1,14 @@
-# Todo
+# Todo Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
+
+### Environment 
+
+* Angular 7
+
+## Backend Created in Spring Boot 2
+Link is below
+* [Todo_Backend](https://github.com/pankajpatil1989/Todo_App_Backend) - Todo application (Spring Boot 2).
 
 ## Development server
 
